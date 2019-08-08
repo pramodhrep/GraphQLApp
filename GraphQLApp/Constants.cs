@@ -1,12 +1,8 @@
 ﻿using System;
 namespace GraphQLApp
 {
-    public class Constants
+    public static class Constants
     {
-        public Constants()
-        {
-        }
-
-        public String url = "https://swapi.apis.guru/graphiql";
+        public const string url = "https://swapi.apis.guru/graphiql";
     }
 }

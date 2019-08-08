@@ -31,8 +31,6 @@ namespace GraphQLApp
 
         private async void loadData()
         {
-            String url = "https://swapi.apis.guru/graphiql";
-
             var graphQLRequest = new GraphQLRequest
             {
                 Query = @"
@@ -46,7 +44,7 @@ namespace GraphQLApp
                 }"
             };
 
-            var graphQLClient = new GraphQLClient(url);
+            var graphQLClient = new GraphQLClient(GraphQLApp.Constants.url);
             var graphQLResponse = await graphQLClient.PostAsync(graphQLRequest);
             FilmsList.ItemsSource = graphQLResponse.Data.allFilms.films.ToObject<List<Film>>();
         }
